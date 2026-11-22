@@ -1,0 +1,61 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Интеравто — Мозырь (демо-версия)</title><meta name="robots" content="noindex"><meta name="description" content="Демо-версия сайта: Интеравто, Мозырь, Интернациональная ул., 63В">
+<style>
+:root{--h:45;--bg1:hsl(var(--h) 70% 14%);--bg2:hsl(calc(var(--h) + 50) 60% 10%);--a:hsl(var(--h) 90% 65%);--b:hsl(calc(var(--h) + 60) 90% 62%);--t:#fff;--m:rgba(255,255,255,.72);
+--g:rgba(255,255,255,.10);--gb:rgba(255,255,255,.28)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font:16px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,Roboto,sans-serif;color:var(--t);background:#000;min-height:100vh;padding:84px 16px 48px;overflow-x:hidden}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.75;z-index:-1;animation:f 18s ease-in-out infinite alternate}
+.b1{width:46vmax;height:46vmax;background:var(--a);top:-12vmax;left:-10vmax}.b2{width:40vmax;height:40vmax;background:var(--b);bottom:-12vmax;right:-8vmax;animation-delay:-6s}
+@keyframes f{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+@media(prefers-reduced-motion:reduce){.blob{animation:none}}
+.glass{background:var(--g);-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);border:1px solid var(--gb);border-radius:28px;
+box-shadow:inset 0 1px 1px rgba(255,255,255,.55),inset 0 -1px 1px rgba(255,255,255,.12),0 18px 50px rgba(0,0,0,.22)}
+.demo{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:10;width:min(960px,calc(100% - 24px));padding:10px 18px;border-radius:999px;font-size:13px;line-height:1.35;text-align:center}
+.wrap{max-width:960px;margin:0 auto;display:grid;gap:16px}
+.hero{padding:44px 32px}.hero small{color:var(--m)}
+h1{font-size:clamp(34px,7vw,64px);line-height:1.02;letter-spacing:-.03em;margin:6px 0 14px;font-weight:700}
+.sub{color:var(--m);font-size:18px;max-width:60ch}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;color:var(--t);text-decoration:none;font-weight:600;background:var(--g);border:1px solid var(--gb);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 1px rgba(255,255,255,.5);transition:transform .2s}
+.btn:hover{transform:scale(1.04)}.btn.p{background:linear-gradient(135deg,var(--a),var(--b));color:#111;border-color:transparent}
+.btn:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.kpi div{padding:20px;text-align:center}
+.kpi b{display:block;font-size:34px;letter-spacing:-.02em}.kpi span{color:var(--m);font-size:14px}
+section.glass{padding:28px}h2{font-size:24px;margin-bottom:14px;letter-spacing:-.01em}
+.svc{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid var(--gb)}.svc:first-of-type{border-top:0}
+.svc p{color:var(--m);font-size:14px}.svc b.pr{white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{padding:7px 14px;border-radius:999px;background:var(--g);border:1px solid var(--gb);font-size:14px}
+.bar{margin:10px 0}.bar i{display:block;height:10px;border-radius:9px;background:rgba(127,127,127,.25);overflow:hidden}.bar i s{display:block;height:100%;background:linear-gradient(90deg,var(--a),var(--b));border-radius:9px}
+.bar span{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px}
+.q{padding:16px 0;border-top:1px solid var(--gb)}.q:first-of-type{border-top:0}.q cite{display:block;color:var(--m);font-size:14px;margin-top:4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.note{color:var(--m);font-size:13px;text-align:center;padding:8px}
+.bg{position:fixed;inset:-40px;z-index:-1;background:#000 center/cover no-repeat;filter:blur(26px) brightness(.45) saturate(1.2)}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.gal img{width:100%;height:220px;object-fit:cover;border-radius:24px;border:1px solid var(--gb);box-shadow:inset 0 1px 1px rgba(255,255,255,.5),0 18px 50px rgba(0,0,0,.35)}
+.rvs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.rv{padding:18px;border-radius:22px;background:var(--g);border:1px solid var(--gb);box-shadow:inset 0 1px 1px rgba(255,255,255,.4)}
+.rv .rh{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:14px}.rv .rh span{color:var(--m)}.rv p{font-size:15px;line-height:1.5}
+.rv img{width:100%;height:150px;object-fit:cover;border-radius:14px;margin-top:10px}
+@media(max-width:700px){.two,.kpi{grid-template-columns:1fr}.hero{padding:30px 22px}}
+body.interavto{--a:#f5c451;--b:#ffe9a8;--g:rgba(255,255,255,.15);--gb:rgba(255,255,255,.45);font-family:Georgia,"Times New Roman",serif;background:linear-gradient(120deg,#0c0a05,#2a2208 60%,#0c0a05)}
+body.interavto .bg{background-color:transparent}body.interavto .glass{border-radius:20px;backdrop-filter:blur(12px) saturate(130%)}
+body.interavto .wrap{max-width:1080px;grid-template-columns:minmax(300px,1fr) 1.5fr}body.interavto .wrap>*{grid-column:2}
+body.interavto .hero{grid-column:1;grid-row:1/span 8;position:sticky;top:84px;align-self:start}body.interavto .note{grid-column:1/-1}
+body.interavto h1{font-size:clamp(40px,6vw,68px);font-weight:400;letter-spacing:-.02em}body.interavto .kpi b{font-weight:400}
+@media(max-width:800px){.wrap{grid-template-columns:1fr!important}.wrap>*{grid-column:1/-1!important;grid-row:auto!important;position:static!important}}</style></head><body class="interavto">
+<div class="bg" style="background-image:url('photos/1.jpg'),url('https://avatars.mds.yandex.net/get-altay/11300692/2a0000019159b4f9216632f167c550519e34/L_height')"></div>
+<div class="demo glass" role="note"><b>Демо-версия.</b> Сайт создан в демонстрационных целях и по первой просьбе владельца будет удалён.</div>
+<main class="wrap">
+<header class="hero glass"><small>Автосервис, ремонт выхлопных систем · Мозырь</small><h1>Интеравто</h1>
+<p style="font-size:22px;font-weight:600;margin-bottom:8px">Автосервис в Мозыре: ремонт, выхлоп, развал-схождение</p><p class="sub">Промывка радиатора отопления салона — 150 Br. Шиномонтаж, оплата картой.</p>
+<div class="row"><a class="btn p" href="tel:+375292470900">Позвонить +375 29 247-09-00</a><a class="btn" href="#contacts">Как нас найти</a></div></header>
+<div class="kpi"><div class="glass"><b>4,9</b><span>рейтинг на Яндекс Картах</span></div><div class="glass"><b>62</b><span>оценок</span></div><div class="glass"><b>30</b><span>отзывов</span></div></div>
+<section class="glass s-gal"><h2>Фото</h2><div class="gal"><img src="photos/1.jpg" alt="Интеравто" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=function(){this.remove()};this.src='https://avatars.mds.yandex.net/get-altay/11300692/2a0000019159b4f9216632f167c550519e34/L_height'"></div></section>
+<section class="glass s-svc"><h2>Услуги и цены</h2><div class="svc"><div><b>Промывка радиатора системы отопления салона</b><p>Альтернатива замене радиатора: промывка на специальной установке.</p></div><b class=pr>150 Br</b></div><div class="svc"><div><b>Ремонт выхлопной системы</b></div></div><div class="svc"><div><b>Развал-схождение</b></div></div><div class="svc"><div><b>Шиномонтаж</b></div></div><div class="svc"><div><b>Компьютерная диагностика автомобиля</b></div></div></section>
+<section class="glass s-feat"><h2>Особенности</h2><div class="chips"><span>Оплата картой</span><span>Базовое сервисное обслуживание</span><span>Развал-схождение</span><span>Шиномонтаж</span></div></section>
+<section class="glass"><h2>Отзывы клиентов</h2><div class="rvs"><div class="rv"><div class="rh"><b>валера м.</b><span>2 февраля</span></div><p>Недавно посетил этот автосервис и остался очень доволен качеством обслуживания! Мастера оперативно провели диагностику автомобиля и быстро определили необходимые работы. За короткий срок поменяли масло в коробке, выполнили качественную замену ШРУСа и задних тормозных колодок. Все сделано аккуратно и профессионально, автомобиль снова едет плавно и уверенно. Отдельно хочу отметить вежливость сотрудников и доступные цены. Однозначно рекомендую этот сервис своим знакомым и буду обращаться сюда вновь!</p></div><div class="rv"><div class="rh"><b>maxim m.</b><span>9 августа</span></div><p>Привозил к ним Х6 е71 3.0 бенз, сам из Питера, парни не отказали, как многие другие, ревизию системы ОЖ сделать, исправлять косяки за прошлой &quot;крутой&quot; СТО, мастера дело свое знают, да вас тут не встретит эталонная чистота или излишние понты в виде белой спецодежды и лакированного пола, за это не придется платить, только нормальное отношение к твоей беде и бюджетный и качественный подход. Как не хватает такой СТО в мегаполисе, где все только и хотят, что тебя облапошить. Молодцы парни - скромно, качественно, с душой.</p></div><div class="rv"><div class="rh"><b>Руслан Казмирчук</b><span>10 сентября 2025</span></div><p>За день заменили всю подвеску, рулевую рейку и барабаны сзади включая тормозные цилиндры и сальники на коробке. Забрал машину в 22 00. Работали до поздна . Машина нужна была срочно на следующий день. Молодцы ребята. Остался доволен. Внутри чисто и аккуратно. На улице рядом кофе аппарат.</p></div></div><p class="note" style="text-align:left;padding:12px 0 0">Отзывы с Яндекс Карт, текст приведён без изменений.</p></section>
+<section class="glass" id="contacts"><h2>Контакты</h2><p><b>Адрес:</b> Мозырь, Интернациональная ул., 63В</p><p><b>Телефон:</b> <a href="tel:+375292470900" style="color:inherit">+375 29 247-09-00</a></p><p><b>Время работы:</b> Закрыто до завтра</p><p><b>Как добраться:</b> Остановка «Школа № 8» — 257 м</p><div class="row"><a class="btn" href="https://www.instagram.com/interavto63/" rel="noopener" target="_blank">Instagram</a></div></section>
+<p class="note">Демо-версия. Данные взяты из открытой карточки организации на Яндекс Картах. Сайт не является официальным сайтом организации.</p>
+</main><script>addEventListener("load",()=>setTimeout(()=>document.querySelectorAll(".gal").forEach(g=>{if(!g.querySelector("img"))g.closest("section").remove()}),2500))</script></body></html>
